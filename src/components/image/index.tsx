@@ -1,7 +1,17 @@
-import { Container } from "./styled"
+import { Container, Frame } from "./styled"
 
-export const Image = () => {
+type Props = {
+  src: string
+  alt?: string
+  className?: string
+  gap?: string
+}
+
+export const Image: React.FC<Props> = ({ className, src, alt, gap }) => {
   return (
-    <Container>Image</Container>
+    <Container $gap={gap} className={className}>
+      <img alt={alt} src={src}/>
+      <Frame />
+    </Container>
   )
 }
