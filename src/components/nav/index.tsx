@@ -1,17 +1,30 @@
-import { Burger, Container, Content, Name } from "./styled"
+import { useState } from "react"
+
+import { Burger } from "../burger"
+import { Menu } from "../menu"
+import { Container, Content, Name } from "./styled"
 
 export const Nav: React.FC = ({ children }) => {
+  const [isOpenMenu, setOpenMenu] = useState(false)
+
+  const handleBurgerClick = () => {
+    setOpenMenu(p => !p)
+  }
+
   return (
-    <Container className="navvvv">
+    <Container>
       <Name>About</Name>
       <Content>
         {children}
       </Content>
-      <Burger>
-        <div />
-        <div />
-        <div />
-      </Burger>
+      <Burger 
+        isOpen={isOpenMenu} 
+        onClick={handleBurgerClick}
+      />
+      <Menu
+        isOpen={isOpenMenu} 
+        onClose={handleBurgerClick}
+      />
     </Container>
   )
 }
