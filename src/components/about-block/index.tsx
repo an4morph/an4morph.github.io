@@ -1,5 +1,5 @@
 import Photo1 from "../../assets/img/polina-1.png"
-import { Container, FirstLine, FirstText, Job, MiddleTitle, Name, SecondLine, SecondText, ThirdText, TopTitle } from "./styled"
+import { Container, FirstLine, FirstText, Gradient, Job, MiddleTitle, Name, SecondLine, SecondText, ThirdText, TopTitle } from "./styled"
 
 const TitleBlock = ({ top }: { top?: boolean }) => {
   const TitleWrap = top ? TopTitle : MiddleTitle
@@ -31,6 +31,7 @@ export const AboutBlock: React.FC = () => {
       <SecondLine>
         <TitleBlock />
         <SecondText>
+          <Gradient />
           I started designing during the pandemic in 2020. At the university, I studied the design of the 
           architectural environment, and then transferred to software engineering. Now I have found an area 
           that combines my two passions - and this is design in IT.

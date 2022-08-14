@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 import { Colors } from "../../styles/types"
 import { media } from "../../utils/devices"
+import { RadialGradient } from "../radial-gradient"
 
 export const Container = styled.div`
   position: relative;
@@ -133,6 +134,7 @@ export const FirstText = styled.p`
 `
 
 export const SecondText = styled.p`
+  position: relative;
   width: 100%;
   margin-left: 0;
   margin-top: 6vw;
@@ -162,5 +164,27 @@ export const ThirdText = styled.p`
   @media ${media.desktop} {
     width: 41vw;
     margin-left: 10vw;
+  }
+`
+
+export const Gradient = styled(RadialGradient)`
+  position: absolute;
+  top: -20vw;
+  left: auto;
+  right: -16vw;
+  width: 80vw;
+  height: 76vw;
+  z-index: -1;
+
+  @media ${media.tabletM} {
+    width: 40vw;
+    height: 36vw;
+  }
+
+  @media ${media.desktop} {
+    width: 40vw;
+    height: 36vw;
+    top: -10vw;
+    left: -6vw;
   }
 `

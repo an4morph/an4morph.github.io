@@ -2,7 +2,7 @@ import 'styled-components'
 
 export enum Colors {
   webBlack = '#262323',
-  webWhite = '#FDFBF7',
+  webWhite = '#f6f2ef',
   main = '#FFEF98',
   like = '#DB7474',
 }
