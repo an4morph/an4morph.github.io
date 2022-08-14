@@ -8,17 +8,20 @@ export const Container = styled.div`
 
   & img {
     width: 80%;
-    margin-top: 3vw;
+    margin-top: 0;
     margin-left: 0;
     align-self: self-start;
 
     @media ${media.tabletM} {
-      width: 24vw;
+      width: 21vw;
+      margin-top: 4vw;
+      margin-left: 5vw;
     }
 
     @media ${media.desktop} {
-      width: 24vw;
+      width: 21vw;
       margin-left: 6vw;
+      margin-top: 3vw;
     }
   }
 
@@ -57,18 +60,9 @@ export const SecondLine = styled.div`
   }
 `
 
-export const Title = styled.div`
-  font-family: ${({ theme }) => theme.fonts.primary};
-  margin-top: 3.6vw;
-  margin-left: 0;
-
-  @media ${media.desktop} {
-    margin-left: 2vw;
-  }
-`
-
-export const TopTitle = styled(Title)`
+export const TopTitle = styled.div`
   display: block;
+  margin-top: 6vw;
 
   @media ${media.tabletM} {
     display: none;
@@ -78,38 +72,47 @@ export const TopTitle = styled(Title)`
   }
 `
 
-export const MiddleTitle = styled(Title)`
+export const MiddleTitle = styled.div`
   display: none;
 
   @media ${media.tabletM} {
     display: block;
+    margin-top: 5.8vw;
   }
   @media ${media.desktop} {
     display: block;
+    margin-top: 4vw;
+    margin-left: 2vw;
   }
 `
 
 export const Name = styled.div`
+  font-family: ${({ theme }) => theme.fonts.primary};
   font-size: 40px;
   text-transform: uppercase;
-  line-height: 40px;
-  white-space: nowrap;
-  margin-bottom: 1.2vw;
+  line-height: 120%;
+  margin-bottom: 2vw;
+  font-weight: 300;
 
+  @media ${media.tabletM} {
+    margin-bottom: 1vw;
+  }
   @media ${media.desktop} {
-    font-size: 4vw;
-    line-height: 4vw;
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    white-space: nowrap;
+    margin-bottom: 1vw;
   }
 `
 
 export const Job = styled.div`
   font-size: 18px;
-  line-height: 18px;
-  white-space: nowrap;
+  line-height: 140%;
 
   @media ${media.desktop} {
-    font-size: 1.4vw;
-    line-height: 1.4vw;
+    font-size: 1.2vw;
+    line-height: 1.2vw;
+    white-space: nowrap;
   }
 `
 
@@ -120,7 +123,7 @@ export const FirstText = styled.p`
   margin-right: 0;
 
   @media ${media.tabletM} {
-    margin-left: 4.6vw;
+    margin-left: 5.7vw;
   }
 
   @media ${media.desktop} {
@@ -132,18 +135,24 @@ export const FirstText = styled.p`
 export const SecondText = styled.p`
   width: 100%;
   margin-left: 0;
-  margin-top: 3vw;
+  margin-top: 6vw;
+
+  @media ${media.tabletM} {
+    width: 80%;
+    margin-left: 4.8vw;
+  }
 
   @media ${media.desktop} {
-    margin-left: 10vw;
+    margin-left: 12vw;
+    margin-top: 2vw;
   }
 `
 
 export const ThirdText = styled.p`
   width: 100%;
   margin-left: 0;
-  margin-top: 3vw;
-  margin-bottom: 3vw;
+  margin-top: 6vw;
+  margin-bottom: 6vw;
 
   @media ${media.tabletM} {
     width: auto;

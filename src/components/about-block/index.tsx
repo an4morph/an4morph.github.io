@@ -1,5 +1,5 @@
 import Photo1 from "../../assets/img/polina-1.png"
-import { Container, FirstLine, FirstText, Job, MiddleTitle, Name, SecondLine, SecondText, ThirdText, Title, TopTitle } from "./styled"
+import { Container, FirstLine, FirstText, Job, MiddleTitle, Name, SecondLine, SecondText, ThirdText, TopTitle } from "./styled"
 
 const TitleBlock = ({ top }: { top?: boolean }) => {
   const TitleWrap = top ? TopTitle : MiddleTitle

@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 import { Colors } from "../../styles/types"
-import { config } from "../../utils/config"
+import { media } from "../../utils/devices"
 
 export const Container = styled.div`
   display: flex;
@@ -9,21 +9,59 @@ export const Container = styled.div`
 `
 
 export const Name = styled.div`
+  display: none;
   position: fixed;
-  top: ${`${config.layout.padding.t}px`};
-  left: ${`${config.layout.padding.l}px`};
-  font-family: ${({ theme }) => theme.fonts.primary};
-  font-size: ${`${config.layout.name}px`};
-  font-weight: 200;
+  top: 40px;
+  left: 26px;
+  
   transform: rotate(-90deg) translateX(-100%);
   transform-origin: left top;
-  line-height: ${`${config.layout.name}px`};
+
   color: ${Colors.webBlack};
+  text-transform: uppercase;
+  font-family: ${({ theme }) => theme.fonts.primary};
+  font-weight: 200;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media ${media.tabletS} {
+    display: block;
+  }
+
+  @media ${media.tabletM} {
+    display: block;
+    font-size: 5vw;
+    line-height: 5vw;
+  }
+
+  @media ${media.desktop} {
+    display: block;
+    font-size: 3.2vw;
+    line-height: 3.2vw;
+    top: 3vw;
+    left: 2.4vw;
+  }
 `
 
 export const Content = styled.div`
   width: 100%;
-  margin-top: ${`${config.layout.padding.t}px`};
-  margin-left: ${`${(config.layout.padding.l * 2) + config.layout.name}px`};
-  margin-right: ${`${(config.layout.padding.r * 2) + config.layout.burger.w}px`};
+  margin-top: 40px;
+  margin-left: 26px;
+  margin-right: 26px;
+
+  @media ${media.tabletS} {
+    margin-left: 84px;
+    margin-right: 9.6vw;
+  }
+
+  @media ${media.tabletM} {
+    margin-left: 10.6vw;
+    margin-right: 9vw;
+  }
+
+  @media ${media.desktop} {
+    margin-top: 3vw;
+    margin-left: 9.3vw;
+    margin-right: 9vw;
+  }
 `
