@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { Colors } from "../../styles/types"
 import { media } from "../../utils/devices"
 
-export const BurgerButton = styled.div<{ $isOpen: boolean }>`
+export const BurgerButton = styled.button`
   position: fixed;
   top: 40px;
   right: 26px;
@@ -20,7 +20,7 @@ export const BurgerButton = styled.div<{ $isOpen: boolean }>`
     background-color: ${Colors.webBlack};
 
     @media ${media.tabletS} {
-      width: 30px;
+      width: 38px;
     }
     @media ${media.tabletM} {
       width: 38px;
@@ -31,8 +31,15 @@ export const BurgerButton = styled.div<{ $isOpen: boolean }>`
     }
   }
 
+  & > div:nth-child(1) {
+    transform-origin: top left;
+  }
+  & > div:nth-child(3) {
+    transform-origin: bottom left;
+  }
+
   @media ${media.tabletS} {
-    height: 26px;
+    height: 34px;
   }
   @media ${media.tabletM} {
     height: 34px;

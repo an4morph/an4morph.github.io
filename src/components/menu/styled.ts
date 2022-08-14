@@ -1,7 +1,7 @@
 import styled from "styled-components"
 
 import { Colors } from "../../styles/types"
-import { config } from "../../utils/config"
+import { media } from "../../utils/devices"
 
 export const Background = styled.div`
   width: 100%;
@@ -17,34 +17,54 @@ export const Container = styled.div<{ $isOpen: boolean }>`
   top: 0;
   right: 0;
   display: flex;
-  width: 50%;
+  width: 80%;
   color: ${Colors.webWhite};
-  padding-top: ${`${config.layout.padding.t}px`};
-  padding-left: ${`${config.layout.padding.l}px`};
-  padding-right: ${`${config.layout.padding.r}px`};
+  padding: 40px 28px;
   transform: translateX(100%);
+
+  @media ${media.desktop} {
+    width: 50%;
+    padding: 3.4vw;
+  }
 `
 
 export const Items = styled.div`
   display: flex;
   width: 100%;
   flex-wrap: wrap;
-  padding-bottom: ${`${config.layout.padding.t - config.layout.padding.l}px`};
 
   & > div {
     width: 100%;
-    padding-bottom: ${`${config.layout.padding.l}px`};
+    padding-bottom: 30px;
+
+    @media ${media.desktop} {
+      padding-bottom: 2.4vw;
+    }
+  }
+
+  & > div:last-child {
+    padding-bottom: 0;
   }
 
   & a {
     display: inline-block;
-    font-size: ${`${config.menu.font}px`};
-    line-height: ${`${config.menu.font}px`};
+    font-size: 28px;
+    line-height: 28px;
     font-family: ${({ theme }) => theme.fonts.primary};
     text-transform: uppercase;
 
     &:hover {
       color: ${Colors.main};
+    }
+
+    @media ${media.tabletM} {
+      font-size: 40px;
+      line-height: 40px;
+    }
+
+    @media ${media.desktop} {
+      font-size: 3.4vw;
+      line-height: 3.4vw;
     }
   }
 `

@@ -1,4 +1,7 @@
+import { useRef } from "react"
+
 import { BurgerButton } from "./styled"
+import { useAnimation } from "./useAnimation"
 
 type Props = {
   isOpen: boolean
@@ -7,15 +10,19 @@ type Props = {
 }
 
 export const Burger: React.FC<Props> = ({ isOpen, onClick, className }) => {
+  const trigger = useRef() as React.MutableRefObject<HTMLButtonElement> 
+
+  useAnimation(trigger, isOpen)
+
   return (
     <BurgerButton
-      $isOpen={isOpen}
-      className={className} 
-      onClick={onClick}
+      className={className}
+      onClick={onClick} 
+      ref={trigger}
     >
-      <div />
-      <div />
-      <div />
+      <div className="line line-1" />
+      <div className="line line-2" />
+      <div className="line line-3" />
     </BurgerButton>
   )
 }
