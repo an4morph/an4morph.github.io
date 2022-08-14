@@ -11,11 +11,18 @@ const theme: DefaultTheme = {
   },
   gradient: `radial-gradient(46.38% 30.62% at 50.08% 40.09%, rgba(255, 239, 152, 0.61) 0%, rgba(255, 239, 152, 0) 100%)`,
   thickness: {
-    mobileS: '1px',
-    mobileM: '0.31vw',
-    tabletS: '1px',
-    tabletM: '0.2vw',
-    desktop: '0.1vw',
+    mobileS: '2px',
+    mobileM: '2px',
+    tabletS: '2px',
+    tabletM: '2px',
+    desktop: '0.16vw',
+  },
+  paragraph: {
+    mobileS: '18px',
+    mobileM: '18px',
+    tabletS: '18px',
+    tabletM: '18px',
+    desktop: '1.4vw',
   }
 }
 

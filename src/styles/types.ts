@@ -16,5 +16,6 @@ declare module 'styled-components' {
     },
     gradient: string
     thickness: ThemeMedia
+    paragraph: ThemeMedia
   }
 }

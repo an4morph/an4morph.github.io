@@ -1,7 +1,8 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import { Colors } from "../../styles/types"
-import { media } from "../../utils/devices"
+import { MediaSizes } from "../../types"
+import { media, MediaCreator } from "../../utils/devices"
 import { RadialGradient } from "../radial-gradient"
 
 export const Container = styled.div`
@@ -34,8 +35,10 @@ export const Container = styled.div`
     color: ${Colors.webBlack};
     white-space: pre-line;
 
-    @media ${media.desktop} {
-      font-size: 1.4vw;
+    ${
+      MediaCreator((msize: MediaSizes) => css`
+        font-size: ${({ theme }) => theme.paragraph[msize]};
+      `)
     }
   }
 `
@@ -107,13 +110,17 @@ export const Name = styled.div`
 `
 
 export const Job = styled.div`
-  font-size: 18px;
   line-height: 140%;
 
   @media ${media.desktop} {
-    font-size: 1.2vw;
     line-height: 1.2vw;
     white-space: nowrap;
+  }
+
+  ${
+    MediaCreator((msize: MediaSizes) => css`
+      font-size: ${({ theme }) => theme.paragraph[msize]};
+    `)
   }
 `
 

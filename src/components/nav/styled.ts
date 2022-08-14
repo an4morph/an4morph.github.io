@@ -51,7 +51,7 @@ export const Content = styled.div`
 
   @media ${media.tabletS} {
     margin-left: 84px;
-    margin-right: 9.6vw;
+    margin-right: 80px;
   }
 
   @media ${media.tabletM} {

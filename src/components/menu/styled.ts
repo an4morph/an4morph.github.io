@@ -52,6 +52,7 @@ export const Items = styled.div`
     line-height: 28px;
     font-family: ${({ theme }) => theme.fonts.primary};
     text-transform: uppercase;
+    font-weight: 300;
 
     &:hover {
       color: ${Colors.main};
