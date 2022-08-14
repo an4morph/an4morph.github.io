@@ -1,3 +1,4 @@
+import { AppLink } from '../app-link'
 import { StyledButton } from './styled'
 
 type Props = {
@@ -5,6 +6,7 @@ type Props = {
   type?: JSX.IntrinsicElements['button']['type']
   onClick?: () => void
   className?: string
+  link?: string
 }
 
 export const Button = ({
@@ -12,8 +14,9 @@ export const Button = ({
   type = 'button',
   onClick,
   className,
+  link,
 }: Props): JSX.Element => {
-  return (
+  const button = (
     <StyledButton
       className={className}
       onClick={onClick}
@@ -22,4 +25,11 @@ export const Button = ({
       <span>{children}</span>
     </StyledButton>
   )
+  return link ? (
+    <AppLink
+      href={link}
+    >
+      {button}
+    </AppLink>
+  ): button
 }
