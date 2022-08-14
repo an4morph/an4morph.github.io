@@ -23,6 +23,13 @@ const theme: DefaultTheme = {
     tabletS: '18px',
     tabletM: '18px',
     desktop: '1.4vw',
+  },
+  h3: {
+    mobileS: '22px',
+    mobileM: '22px',
+    tabletS: '22px',
+    tabletM: '22px',
+    desktop: '1.8vw',
   }
 }
 

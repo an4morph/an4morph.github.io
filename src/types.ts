@@ -10,3 +10,10 @@ export type MediaSizes =
 export type ThemeMedia = {
   [x in MediaSizes]?: string
 }
+
+export type Skill = {
+  id: string | number
+  name: string
+  desc: string
+  isFav?: boolean
+}
