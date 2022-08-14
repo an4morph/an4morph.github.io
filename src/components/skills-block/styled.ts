@@ -8,7 +8,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 8vw;
-  margin-bottom: 108vw;
+  margin-bottom: 8vw;
   flex-direction: column;
 
   @media ${media.desktop} {
