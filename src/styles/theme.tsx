@@ -9,7 +9,14 @@ const theme: DefaultTheme = {
     normal: "'Anonymous Pro', monospace",
     primary: "'Poppins', sans-serif",
   },
-  gradient: `radial-gradient(46.38% 30.62% at 50.08% 40.09%, rgba(255, 239, 152, 0.61) 0%, rgba(255, 239, 152, 0) 100%)`
+  gradient: `radial-gradient(46.38% 30.62% at 50.08% 40.09%, rgba(255, 239, 152, 0.61) 0%, rgba(255, 239, 152, 0) 100%)`,
+  thickness: {
+    mobileS: '1px',
+    mobileM: '0.31vw',
+    tabletS: '1px',
+    tabletM: '0.2vw',
+    desktop: '0.1vw',
+  }
 }
 
 export const Theme: React.FC = ({ children }) => (

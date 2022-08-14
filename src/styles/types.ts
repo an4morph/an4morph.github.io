@@ -1,4 +1,5 @@
 import 'styled-components'
+import { ThemeMedia } from '../types'
 
 export enum Colors {
   webBlack = '#262323',
@@ -14,5 +15,6 @@ declare module 'styled-components' {
       normal: string
     },
     gradient: string
+    thickness: ThemeMedia
   }
 }

@@ -1,5 +1,6 @@
 import { AboutBlock } from "./components/about-block"
 import { Nav } from "./components/nav"
+import { SkillsBlock } from "./components/skills-block"
 import { Container } from "./styles/App.styled"
 
 const App: React.FC = () => {
@@ -7,6 +8,7 @@ const App: React.FC = () => {
     <Container>
       <Nav>
         <AboutBlock />
+        <SkillsBlock />
       </Nav>
     </Container>
   )

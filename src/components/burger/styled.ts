@@ -1,7 +1,8 @@
-import styled from "styled-components"
+import styled, { css } from "styled-components"
 
 import { Colors } from "../../styles/types"
-import { media } from "../../utils/devices"
+import { MediaSizes } from "../../types"
+import { media, MediaCreator } from "../../utils/devices"
 
 export const BurgerButton = styled.button`
   position: fixed;
@@ -16,8 +17,13 @@ export const BurgerButton = styled.button`
 
   & > div {
     width: 28px;
-    height: 2px;
     background-color: ${Colors.webBlack};
+
+    ${
+      MediaCreator((msize: MediaSizes) => css`
+        height: ${({ theme }) => theme.thickness[msize]};
+      `)
+    }
 
     @media ${media.tabletS} {
       width: 38px;
@@ -27,7 +33,6 @@ export const BurgerButton = styled.button`
     }
     @media ${media.desktop} {
       width: 3.2vw;
-      height: 0.2vw;
     }
   }
 

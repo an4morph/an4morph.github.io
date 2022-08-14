@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
+import { Colors } from './types'
+
 export const GlobalStyle = createGlobalStyle`
   *,
   *:before,
@@ -18,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    background-color: #f0f0f0;
+    background-color: ${Colors.webWhite};
     max-width: 100vw;
     width: 100vw;
     height: 100%;
