@@ -3,8 +3,9 @@ import styled, { css } from "styled-components"
 import { Colors } from "../../styles/types"
 import { MediaSizes } from "../../types"
 import { media, MediaCreator } from "../../utils/devices"
+import { CustomScroll } from "../custom-scroll"
 
-export const Container = styled.div`
+export const Container = styled(CustomScroll)`
   background-color: ${Colors.webWhite};
   color: ${Colors.webBlack};
   padding: 26px;

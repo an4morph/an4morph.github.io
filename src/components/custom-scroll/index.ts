@@ -1,19 +1,29 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { Colors } from '../../styles/types'
+import { MediaSizes } from '../../types'
+import { MediaCreator } from '../../utils/devices'
 
 export const CustomScroll = styled.div<{ $color?: Colors }>`
   overflow-y: auto;
 
   ::-webkit-scrollbar {
-    width: 8px;
-  }
-
-  ::-webkit-scrollbar-track {
-    width: 8px;
+    width: 1vw;
+    
+    ${
+      MediaCreator((msize: MediaSizes) => css`
+        outline: ${({ theme }) => `${theme.thickness[msize]} solid ${Colors.webBlack}`};
+      `)
+    }
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: green;
+    background-color: ${Colors.webBlack};
+
+    ${
+      MediaCreator((msize: MediaSizes) => css`
+        border: ${({ theme }) => `${theme.thickness[msize]} solid ${Colors.webWhite}`};
+      `)
+    }
   }
 `
