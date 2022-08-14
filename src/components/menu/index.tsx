@@ -1,6 +1,9 @@
+import { useRef } from "react"
+
 import { AppLink } from "../app-link"
 import { Burger } from "../burger"
-import { Container, Items } from "./styled"
+import { Background, Container, Items } from "./styled"
+import { useAnimation } from "./useAnimation"
 
 type Props = {
   isOpen: boolean
@@ -15,12 +18,17 @@ const links = [
 ]
 
 export const Menu: React.FC<Props> = ({ isOpen, onClose }) => {
+  const trigger = useRef() as React.MutableRefObject<HTMLDivElement> 
+
+  useAnimation(trigger, isOpen)
+
   return (
-    <Container $isOpen={isOpen}>
+    <Container $isOpen={isOpen} ref={trigger}>
+      <Background className="background"/>
       <Items>
         {
           links.map(({ href, id, text }) => (
-            <div key={id}>
+            <div className="link-item" key={id}>
               <AppLink href={href}>{text}</AppLink>
             </div>
           ))
