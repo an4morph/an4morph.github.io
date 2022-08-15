@@ -30,7 +30,8 @@ const theme: DefaultTheme = {
     tabletS: '22px',
     tabletM: '22px',
     desktop: '1.8vw',
-  }
+  },
+  scroll: '1vw'
 }
 
 export const Theme: React.FC = ({ children }) => (

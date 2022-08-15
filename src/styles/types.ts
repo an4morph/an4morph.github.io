@@ -18,5 +18,6 @@ declare module 'styled-components' {
     thickness: ThemeMedia
     paragraph: ThemeMedia
     h3: ThemeMedia
+    scroll: string
   }
 }

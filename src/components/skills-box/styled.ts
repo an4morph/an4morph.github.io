@@ -71,3 +71,28 @@ export const Desc = styled.p`
     `)
   }
 `
+
+export const Wrapper = styled.div`
+  position: relative;
+`
+
+export const ScrollGradient = styled.div<{ $top?: boolean }>`
+  height: 3.3vw;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: ${({ $top }) => {
+    if (!$top) return `linear-gradient(180deg, ${Colors.webWhite}00 0%, ${Colors.webWhite} 90%);`
+    return `linear-gradient(180deg, ${Colors.webWhite} 0%, ${Colors.webWhite}00 90%);`
+  }};
+
+  ${
+    MediaCreator((msize: MediaSizes) => css<{ $top?: boolean }>`
+      bottom: ${({ theme, $top }) => $top ? 'auto' : theme.thickness[msize]};
+      top: ${({ theme, $top }) => $top ? theme.thickness[msize] : 'auto'};
+      left: ${({ theme }) => theme.thickness[msize]};
+      width: ${({ theme }) => `calc(100% - (${theme.thickness[msize]} * 3) - ${theme.scroll})`};
+    `)
+  }
+`

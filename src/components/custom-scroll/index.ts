@@ -8,7 +8,7 @@ export const CustomScroll = styled.div<{ $color?: Colors }>`
   overflow-y: auto;
 
   ::-webkit-scrollbar {
-    width: 1vw;
+    width: ${({ theme }) => theme.scroll};
     
     ${
       MediaCreator((msize: MediaSizes) => css`
