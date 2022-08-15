@@ -1,5 +1,9 @@
+import { useRef, useState } from 'react'
+
+import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg'
 import { AppLink } from '../app-link'
-import { StyledButton } from './styled'
+import { Background, StyledButton } from './styled'
+import { useAnimation } from './useAnimation'
 
 type Props = {
   children: React.ReactNode
@@ -16,13 +20,23 @@ export const Button = ({
   className,
   link,
 }: Props): JSX.Element => {
+  const [isHover, setHover] = useState(false)
+  const trigger = useRef() as React.MutableRefObject<HTMLButtonElement> 
+
+  useAnimation(trigger, isHover)
+
   const button = (
     <StyledButton
       className={className}
       onClick={onClick}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      ref={trigger}
       type={type}
     >
+      <Background className="background"/>
       <span>{children}</span>
+      <Arrow className="arrow"/>
     </StyledButton>
   )
   return link ? (
