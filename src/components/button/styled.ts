@@ -8,7 +8,7 @@ export const Background = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 150%;
+  width: 0;
   height: 100%;
   background-color: ${Colors.main};
   z-index: -1;

@@ -9,7 +9,8 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  margin-bottom: 100vw;
+  padding-bottom: 100vw;
+  padding-top: 10vw;
 `
 
 export const Hint = styled.div`
