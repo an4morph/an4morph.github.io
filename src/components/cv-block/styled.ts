@@ -4,6 +4,7 @@ import { Colors } from "../../styles/types"
 import { MediaSizes } from "../../types"
 import { media, MediaCreator } from "../../utils/devices"
 import { Button } from "../button"
+import { RadialGradient } from "../radial-gradient"
 
 export const Container = styled.div`
   display: flex;
@@ -70,5 +71,25 @@ export const LinkButton = styled(Button)`
   
   @media ${media.desktop} {
     margin-bottom: 2vw;
+  }
+`
+
+export const Gradient = styled(RadialGradient)`
+  display: none;
+  position: absolute;
+
+  width: 50vw;
+  height: 36vw;
+  top: auto;
+  left: -2vw;
+  
+  z-index: -1;
+
+  @media ${media.tabletM} {
+    display: block;
+  }
+
+  @media ${media.desktop} {
+    display: block;
   }
 `

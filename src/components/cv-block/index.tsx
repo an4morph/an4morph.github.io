@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react"
 import { nanoid } from "nanoid"
 
 import { gsap } from "../../utils/gsap"
-import { Btns, Container, Hint, LinkButton } from "./styled"
+import { Btns, Container, Gradient, Hint, LinkButton } from "./styled"
 import { useAnimation } from "./useAnimation"
 
 const links = [
@@ -59,14 +59,14 @@ export const CVBlock: React.FC = () => {
   useEffect(() => {
     const q = gsap.utils.selector(trigger)
     if (start) {
-      gsap.to(q('.par'), {
+      gsap.to(q('.hint-text'), {
         opacity: 0,
         x: '0.7vw',
         duration: 0.2,
         ease: 'power4.out',
       })
     } else {
-      gsap.to(q('.par'), {
+      gsap.to(q('.hint-text'), {
         opacity: 1,
         x: 0,
         duration: 0.2,
@@ -78,7 +78,10 @@ export const CVBlock: React.FC = () => {
   return (
     <Container ref={trigger}>
       <Hint>
-        <p className="par">{links.find(l => l.id === hoverId)?.hint || defaultHint}</p>
+        <Gradient/>
+        <p className="hint-text">
+          {links.find(l => l.id === hoverId)?.hint || defaultHint}
+        </p>
       </Hint>
       <Btns>
         {
