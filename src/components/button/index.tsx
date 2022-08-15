@@ -1,6 +1,5 @@
 import { useRef, useState } from 'react'
 
-import { ReactComponent as Arrow } from '../../assets/icons/arrow.svg'
 import { AppLink } from '../app-link'
 import { Background, StyledButton } from './styled'
 import { useAnimation } from './useAnimation'
@@ -36,7 +35,7 @@ export const Button = ({
     >
       <Background className="background"/>
       <span>{children}</span>
-      <Arrow className="arrow"/>
+      <div className="arrow" />
     </StyledButton>
   )
   return link ? (
