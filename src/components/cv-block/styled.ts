@@ -17,8 +17,11 @@ export const Hint = styled.div`
   display: none;
   justify-content: center;
   align-items: center;
+  position: relative;
+  height: 100%;
 
   & p {
+    position: absolute;
     width: 75%;
     font-size: 18px;
     font-family: ${({ theme }) => theme.fonts.normal};
@@ -52,11 +55,18 @@ export const Btns = styled.div`
   display: flex;
   flex-direction: column;
   flex: 3;
+  & a, & button {
+    width: 100%;
+  }
 `
 
 export const LinkButton = styled(Button)`
   margin-bottom: 26px;
   width: 100%;
+
+  & a, & button {
+    width: 100%;
+  }
   
   @media ${media.desktop} {
     margin-bottom: 2vw;
