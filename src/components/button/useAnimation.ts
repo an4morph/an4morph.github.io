@@ -14,21 +14,36 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLButtonElement>,
     in: () => gsap.to(q('.background'), {
       width: '150%',
       ease: 'power0.out',
-      duration: 0.3
+      duration: 0.2
     }),
     out: () => gsap.to(q('.background'), {
       width: 0,
       ease: 'power0.in',
-      duration: 0.3
+      duration: 0.2
+    })
+  }), [q])
+
+  const arrow = useMemo(() => ({
+    in: () => gsap.to(q('.arrow'), {
+      x: '1.3vw',
+      ease: 'power0.out',
+      duration: 0.2
+    }),
+    out: () => gsap.to(q('.arrow'), {
+      x: 0,
+      ease: 'power0.in',
+      duration: 0.2
     })
   }), [q])
 
   useEffect(() => {
     if (toggle) {
       background.in()
+      arrow.in()
     }
     if (!toggle && dirty) {
       background.out()
+      arrow.out()
     }
-  }, [dirty, toggle, background])
+  }, [dirty, toggle, background, arrow])
 }
