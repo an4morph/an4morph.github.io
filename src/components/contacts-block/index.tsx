@@ -4,7 +4,8 @@ import { nanoid } from "nanoid"
 
 import Photo2 from "../../assets/img/polina-2.png"
 import { gsap } from "../../utils/gsap"
-import { Btns, Container, FirstLine, Gradient, LinkButton, Wrapper } from "./styled"
+import { AppLink } from "../app-link"
+import { Btns, Container, FirstLine, FirstText, Gradient, LinkButton, StyledTgLink, Wrapper } from "./styled"
 import { useAnimation } from "./useAnimation"
 
 const links = [
@@ -25,8 +26,9 @@ const links = [
   }
 ]
 
+const TgLink = () => <StyledTgLink href="https://t.me/an4morph" target="_blank">@an4morph</StyledTgLink>
+
 const title = 'Let’s communicate!'
-const desc = 'The fastest way I will answer you is in the telegram chat (@an4morph). But you can always write me an email or message in Linkedin'
 
 export const ContactsBlock: React.FC = () => {
   const trigger = useRef() as React.MutableRefObject<HTMLDivElement> 
@@ -37,11 +39,15 @@ export const ContactsBlock: React.FC = () => {
     <Container ref={trigger}>
       <Wrapper />
       <FirstLine>
-        <div>
+        <FirstText>
+          <Gradient />
           <h3>{title}</h3>
           <img alt="polina with laptop" className="min-screen" src={Photo2} />
-          <p>{desc}</p>
-        </div>
+          <p>
+            The fastest way I will answer you is in the telegram chat &#40;<TgLink />&#41;. 
+            But you can always write me an email or message in Linkedin
+          </p>
+        </FirstText>
         <img alt="polina with laptop" className="max-screen" src={Photo2} />
       </FirstLine>
       <Btns>

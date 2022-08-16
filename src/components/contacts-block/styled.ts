@@ -3,6 +3,7 @@ import styled, { css } from "styled-components"
 import { Colors } from "../../styles/types"
 import { MediaSizes } from "../../types"
 import { media, MediaCreator } from "../../utils/devices"
+import { AppLink } from "../app-link"
 import { Button } from "../button"
 import { ButtonWhite } from "../button/white"
 import { RadialGradient } from "../radial-gradient"
@@ -30,6 +31,20 @@ export const Wrapper = styled.div`
   }
 `
 
+export const FirstText = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-right: 0;
+  position: relative;
+
+  @media ${media.tabletM} {
+    padding-right: 3vw;
+  }
+  @media ${media.desktop} {
+    padding-right: 3vw;
+  }
+`
+
 export const Container = styled.div`
   background-color: ${Colors.webBlack};
   color: ${Colors.webWhite};
@@ -44,7 +59,7 @@ export const Container = styled.div`
     text-transform: uppercase;
 
     @media ${media.tabletM} {
-      font-size: 3vw;
+      font-size: 30px;
     }
     @media ${media.desktop} {
       font-size: 3vw;
@@ -56,17 +71,25 @@ export const Container = styled.div`
     font-family: ${({ theme }) => theme.fonts.normal};
     line-height: 140%;
     letter-spacing: 0.02em;
+    align-self: flex-end;
+    margin-top: 40px;
+    width: 100%;
+    z-index: 2;
 
     ${
       MediaCreator((msize: MediaSizes) => css`
         font-size: ${({ theme }) => theme.paragraph[msize]};
       `)
     }
+    @media ${media.desktop} {
+      width: 70%;
+    }
   }
 
   & img {
     width: 60vw;
-    opacity: 0.1;
+    align-self: flex-start;
+    margin-top: 3vw;
 
     @media ${media.tabletM} {
       width: 24vw;
@@ -100,9 +123,12 @@ export const Container = styled.div`
 
 export const Gradient = styled(RadialGradient)`
   position: absolute;
-  width: 50px;
-  height: 30px;
-  transform: rotate(45deg);
+  width: 40vw;
+  height: 20vw;
+  transform: rotate(-30deg);
+  top: 0;
+  opacity: 0.6;
+  z-index: 0;
 `
 
 export const FirstLine = styled.div`
@@ -118,12 +144,20 @@ export const FirstLine = styled.div`
 `
 
 export const LinkButton = styled(ButtonWhite)`
-  margin-bottom: 3vw;
+  margin-bottom: 40px;
+
+  @media ${media.tabletM} {
+    margin-bottom: 3vw;
+  }
+  @media ${media.desktop} {
+    margin-bottom: 3vw;
+  }
 `
 
 export const Btns = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 60px;
 
   & > * {
     width: 100%;
@@ -134,6 +168,13 @@ export const Btns = styled.div`
     @media ${media.desktop} {
       width: 40%;
     }
+  }
+
+  @media ${media.tabletM} {
+    margin-top: 6vw;
+  }
+  @media ${media.desktop} {
+    margin-top: 6vw;
   }
 
   & button {
@@ -150,3 +191,11 @@ export const Btns = styled.div`
     align-self: flex-end;
   }
 `
+
+export const StyledTgLink = styled(AppLink)`
+  color: ${Colors.main}!important;
+  &:hover {
+    opacity: 0.8;
+  }
+`
+

@@ -20,6 +20,11 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLDivElement>, to
   const q = gsap.utils.selector(trigger)
   const [dirty, setDirty] = useState(false)
 
+  const gsapTo = useCallback((selector: string, config: gsap.TweenVars) => {
+    if (!q(selector).length) return null
+    return gsap.to(q(selector), config)
+  }, [q])
+
   useEffect(() => {
     if (toggle && !dirty) setDirty(true)
   }, [toggle, dirty])
@@ -50,7 +55,7 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLDivElement>, to
   }), [trigger])
 
   const background = useMemo(() => ({
-    in: () => gsap.to(q('.background'), {
+    in: () => gsapTo('.background', {
       width: '100%',
       ease: "power1.out",
       duration: timing.background.duration,
@@ -66,10 +71,10 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLDivElement>, to
       duration: timing.background.duration,
       delay: timing.background.delay
     })
-  }), [q])
+  }), [q, gsapTo])
 
   const linkItem = useMemo(() => ({
-    in: () => gsap.to(q('.link-item'), {
+    in: () => gsapTo('.link-item', {
       delay: timing.link.delay,
       duration: timing.link.duration,
       opacity: 1,
@@ -87,7 +92,7 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLDivElement>, to
       stagger: -timing.link.stagger,
       ease: "power1.in"
     })
-  }), [q])
+  }), [q, gsapTo])
 
   useEffect(() => {
     init()

@@ -9,6 +9,11 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLButtonElement>,
   const [dirty, setDirty] = useState(false)
   const msize = useAppMediaQuery()
 
+  const gsapTo = useCallback((selector: string, config: gsap.TweenVars) => {
+    if (!q(selector).length) return null
+    return gsap.to(q(selector), config)
+  }, [q])
+
   const getLineWidth = useCallback(() => {
     if (msize === 'desktop') {
       return {
@@ -33,50 +38,52 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLButtonElement>,
   }, [toggle, dirty])
 
   const init = useCallback(() => {
-    gsap.set(q('.link-item'), {
-      opacity: 0,
-    })
+    if (q('.link-item').length) {
+      gsap.set(q('.link-item'), {
+        opacity: 0,
+      })
+    }
   }, [q])
 
   const line = useMemo(() => ({
-    in: () => gsap.to(q('.line'), {
+    in: () => gsapTo('.line', {
       background: Colors.webWhite,
     }),
-    out: () => gsap.to(q('.line'), {
+    out: () => gsapTo('.line', {
       background: Colors.webBlack,
     })
-  }), [q])
+  }), [gsapTo])
 
   const line1 = useMemo(() => ({
-    in: () => gsap.to(q('.line-1'), {
+    in: () => gsapTo('.line-1', {
       rotate: 35,
       width: getLineWidth().long,
     }),
-    out: () => gsap.to(q('.line-1'), {
+    out: () => gsapTo('.line-1', {
       rotate: 0,
       width: getLineWidth().short
     })
-  }), [q, getLineWidth])
+  }), [gsapTo, getLineWidth])
 
   const line2 = useMemo(() => ({
-    in: () => gsap.to(q('.line-2'), {
+    in: () => gsapTo('.line-2', {
       opacity: 0,
     }),
-    out: () => gsap.to(q('.line-2'), {
+    out: () => gsapTo('.line-2', {
       opacity: 1,
     })
-  }), [q])
+  }), [gsapTo])
 
   const line3 = useMemo(() => ({
-    in: () => gsap.to(q('.line-3'), {
+    in: () => gsapTo('.line-3', {
       rotate: -35,
       width: getLineWidth().long,
     }),
-    out: () => gsap.to(q('.line-3'), {
+    out: () => gsapTo('.line-3', {
       rotate: 0,
       width: getLineWidth().short,
     })
-  }), [q, getLineWidth])
+  }), [gsapTo, getLineWidth])
 
   useEffect(() => {
     init()
