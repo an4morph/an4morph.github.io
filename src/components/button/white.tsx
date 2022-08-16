@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react'
 
 import { AppLink } from '../app-link'
-import { Background, StyledButtonWhite } from './styled'
+import { StyledButtonWhite } from './styled'
 import { useAnimation } from './useAnimation'
 
 type Props = {
@@ -33,8 +33,7 @@ export const ButtonWhite = ({
       ref={trigger}
       type={type}
     >
-      <Background className="background"/>
-      <span>{children}</span>
+      <span className="text-yellow">{children}</span>
       <div className="arrow" />
     </StyledButtonWhite>
   )

@@ -39,9 +39,16 @@ export const Container = styled.div`
 
   & h3 {
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size: 3vw;
+    font-size: 40px;
     font-weight: 300;
     text-transform: uppercase;
+
+    @media ${media.tabletM} {
+      font-size: 3vw;
+    }
+    @media ${media.desktop} {
+      font-size: 3vw;
+    }
   }
 
   & p {
@@ -58,7 +65,36 @@ export const Container = styled.div`
   }
 
   & img {
-    width: 24vw;
+    width: 60vw;
+    opacity: 0.1;
+
+    @media ${media.tabletM} {
+      width: 24vw;
+    }
+    @media ${media.desktop} {
+      width: 24vw;
+    }
+  }
+
+  & .min-screen {
+    display: block;
+
+    @media ${media.tabletM} {
+      display: none;
+    }
+    @media ${media.desktop} {
+      display: none;
+    }
+  }
+  & .max-screen {
+    display: none;
+
+    @media ${media.tabletM} {
+      display: block;
+    }
+    @media ${media.desktop} {
+      display: block;
+    }
   }
 `
 
@@ -71,9 +107,46 @@ export const Gradient = styled(RadialGradient)`
 
 export const FirstLine = styled.div`
   display: flex;
+  flex-direction: column;
+
+  @media ${media.tabletM} {
+    flex-direction: row;
+  }
+  @media ${media.desktop} {
+    flex-direction: row;
+  }
 `
 
 export const LinkButton = styled(ButtonWhite)`
   margin-bottom: 3vw;
-  width: 30vw;
+`
+
+export const Btns = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    width: 100%;
+
+    @media ${media.tabletM} {
+      width: 40%;
+    }
+    @media ${media.desktop} {
+      width: 40%;
+    }
+  }
+
+  & button {
+    width: 100%;
+  }
+
+  & > *:nth-child(1) {
+    align-self: flex-start;
+  }
+  & > *:nth-child(2) {
+    align-self: center;
+  }
+  & > *:nth-child(3) {
+    align-self: flex-end;
+  }
 `

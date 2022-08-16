@@ -37,9 +37,19 @@ export const StyledButton = styled.button`
 
   & .arrow {
     background-image: url(${Arrow});
-    width: 3.6vw;
-    height: 3.6vw;
+    width: 40px;
+    height: 40px;
     background-size: contain;
+    background-repeat: no-repeat;
+
+    @media ${media.tabletM} {
+      width: 3.6vw;
+      height: 3.6vw;
+    }
+    @media ${media.desktop} {
+      width: 3.6vw;
+      height: 3.6vw;
+    }
   }
 
   @media ${media.desktop} {
@@ -68,9 +78,19 @@ export const StyledButtonWhite = styled.button`
 
   & .arrow {
     background-image: url(${ArrowWhite});
-    width: 3.6vw;
-    height: 3.6vw;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
     background-size: contain;
+
+    @media ${media.tabletM} {
+      width: 3.6vw;
+      height: 3.6vw;
+    }
+    @media ${media.desktop} {
+      width: 3.6vw;
+      height: 3.6vw;
+    }
   }
 
   @media ${media.desktop} {

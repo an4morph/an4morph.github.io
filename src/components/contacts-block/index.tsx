@@ -4,7 +4,7 @@ import { nanoid } from "nanoid"
 
 import Photo2 from "../../assets/img/polina-2.png"
 import { gsap } from "../../utils/gsap"
-import { Container, FirstLine, Gradient, LinkButton, Wrapper } from "./styled"
+import { Btns, Container, FirstLine, Gradient, LinkButton, Wrapper } from "./styled"
 import { useAnimation } from "./useAnimation"
 
 const links = [
@@ -39,11 +39,12 @@ export const ContactsBlock: React.FC = () => {
       <FirstLine>
         <div>
           <h3>{title}</h3>
+          <img alt="polina with laptop" className="min-screen" src={Photo2} />
           <p>{desc}</p>
         </div>
-        <img alt="polina with laptop" src={Photo2} />
+        <img alt="polina with laptop" className="max-screen" src={Photo2} />
       </FirstLine>
-      <div>
+      <Btns>
         {
           links.map(({ id, name, link }) => (
             <LinkButton 
@@ -54,7 +55,7 @@ export const ContactsBlock: React.FC = () => {
             </LinkButton>
           ))
         }
-      </div>
+      </Btns>
     </Container>
   )
 }
