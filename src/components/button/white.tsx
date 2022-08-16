@@ -10,6 +10,7 @@ type Props = {
   onClick?: () => void
   className?: string
   link?: string
+  external?: boolean
 }
 
 export const ButtonWhite = ({
@@ -18,6 +19,7 @@ export const ButtonWhite = ({
   onClick,
   className,
   link,
+  external
 }: Props): JSX.Element => {
   const [isHover, setHover] = useState(false)
   const trigger = useRef() as React.MutableRefObject<HTMLButtonElement> 
@@ -40,6 +42,7 @@ export const ButtonWhite = ({
   return link ? (
     <AppLink
       href={link}
+      target={external ? '_blank' : '_self'}
     >
       {button}
     </AppLink>

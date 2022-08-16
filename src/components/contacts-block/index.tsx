@@ -1,10 +1,8 @@
-import { useEffect, useRef, useState } from "react"
+import { useRef } from "react"
 
 import { nanoid } from "nanoid"
 
 import Photo2 from "../../assets/img/polina-2.png"
-import { gsap } from "../../utils/gsap"
-import { AppLink } from "../app-link"
 import { Btns, Container, FirstLine, FirstText, Gradient, LinkButton, StyledTgLink, Wrapper } from "./styled"
 import { useAnimation } from "./useAnimation"
 
@@ -12,17 +10,17 @@ const links = [
   {
     id: nanoid(),
     name: 'Telegram',
-    link: 'https://google.com',
+    link: 'https://t.me/an4morph',
   },
   {
     id: nanoid(),
     name: 'Linkedin',
-    link: 'https://google.com',
+    link: 'https://www.linkedin.com/in/an4morph/',
   },
   {
     id: nanoid(),
     name: 'Email',
-    link: 'https://google.com',
+    link: 'mailto:an4morph@gmail.com',
   }
 ]
 
@@ -54,7 +52,8 @@ export const ContactsBlock: React.FC = () => {
         {
           links.map(({ id, name, link }) => (
             <LinkButton 
-              key={id} 
+              external
+              key={id}
               link={link}
             >
               {name}
