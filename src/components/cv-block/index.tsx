@@ -10,13 +10,13 @@ const links = [
   {
     id: nanoid(),
     name: 'Behance',
-    link: 'https://google.com',
+    link: 'https://www.behance.net/anamorph',
     hint: 'Behance hint'
   },
   {
     id: nanoid(),
     name: 'Github',
-    link: 'https://google.com',
+    link: 'https://github.com/an4morph',
     hint: 'Github hint'
   },
   {
@@ -28,7 +28,7 @@ const links = [
   {
     id: nanoid(),
     name: 'Dribbble',
-    link: 'https://google.com',
+    link: 'https://dribbble.com/an4morph',
     hint: 'Dribbble hint'
   },
   {

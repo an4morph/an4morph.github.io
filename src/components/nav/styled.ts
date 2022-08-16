@@ -6,6 +6,8 @@ import { media } from "../../utils/devices"
 export const Container = styled.div`
   display: flex;
   width: 100%;
+  overflow-x: hidden;
+  width: 100vw;
 `
 
 export const Name = styled.div`
