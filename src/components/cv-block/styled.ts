@@ -10,7 +10,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  padding-bottom: 100vw;
+  padding-bottom: 10vw;
   padding-top: 10vw;
 `
 

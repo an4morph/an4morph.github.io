@@ -1,4 +1,5 @@
 import { AboutBlock } from "./components/about-block"
+import { ContactsBlock } from "./components/contacts-block"
 import { CVBlock } from "./components/cv-block"
 import { Nav } from "./components/nav"
 import { SkillsBlock } from "./components/skills-block"
@@ -11,6 +12,7 @@ const App: React.FC = () => {
         <AboutBlock />
         <SkillsBlock />
         <CVBlock />
+        <ContactsBlock />
       </Nav>
     </Container>
   )

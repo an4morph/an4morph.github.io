@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components'
 
+import ArrowWhite from '../../assets/icons/arrow-white.svg'
 import Arrow from '../../assets/icons/arrow.svg'
 import { Colors } from '../../styles/types'
 import { MediaSizes } from '../../types'
@@ -36,6 +37,37 @@ export const StyledButton = styled.button`
 
   & .arrow {
     background-image: url(${Arrow});
+    width: 3.6vw;
+    height: 3.6vw;
+    background-size: contain;
+  }
+
+  @media ${media.desktop} {
+    font-size: 3vw;
+  }
+`
+
+export const StyledButtonWhite = styled.button`
+  position: relative;
+  padding-bottom: 0.5vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: ${({ theme }) => theme.fonts.primary};
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 160%;
+  font-size: 36px;
+  text-align: left;
+
+  ${
+    MediaCreator((msize: MediaSizes) => css`
+      border-bottom: ${({ theme }) => `${theme.thickness[msize]} solid ${Colors.webWhite}`};
+    `)
+  }
+
+  & .arrow {
+    background-image: url(${ArrowWhite});
     width: 3.6vw;
     height: 3.6vw;
     background-size: contain;
