@@ -48,12 +48,21 @@ export const Name = styled.h3`
   font-family: ${({ theme }) => theme.fonts.primary};
   font-weight: 300;
   line-height: 160%;
-  display: flex;
-  align-items: center;
+  position: relative;
 
   & svg {
     margin-left: 1vw;
     color: ${Colors.like};
+    position: absolute;
+    bottom: 9px;
+
+    @media ${media.tabletM} {
+      bottom: 0.8vw;
+    }
+
+    @media ${media.desktop} {
+      bottom: 0.8vw;
+    }
   }
 
   ${
