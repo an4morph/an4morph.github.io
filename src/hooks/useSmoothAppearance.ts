@@ -19,12 +19,13 @@ const withStagger = (items: SmoothItem[], timing: number) => {
   }))
 }
 
-export const useSmoothAppearance = (mainRef: React.MutableRefObject<HTMLDivElement>, items: SmoothItem[]) => {
+export const useSmoothAppearance = (mainRef: React.MutableRefObject<HTMLDivElement>, items: SmoothItem[], start1?: boolean) => {
   const msize = useAppMediaQuery()
   const isWideScreen = msize === 'desktop' || msize === 'tabletM'
   const DEFAULT_DISTANCE = isWideScreen ? '4vw' : '40px'
 
   useEffect(() => {
+    if (!start1 && start1 !== undefined) return
     const q = gsap.utils.selector(mainRef)
     const actualItems = isWideScreen ? withStagger(items, 0) : items
 
@@ -52,13 +53,13 @@ export const useSmoothAppearance = (mainRef: React.MutableRefObject<HTMLDivEleme
         [position.key]: 0,
         delay,
         opacity: 1,
-        duration: 1.2,
+        duration: 1,
         ease: 'power2.out',
         scrollTrigger: {
           trigger: currentTrigger,
-          start: start || 'top 50%',
+          start: start || 'top 90%',
         },
       })
     })
-  }, [items, mainRef, isWideScreen, DEFAULT_DISTANCE])
+  }, [items, mainRef, isWideScreen, DEFAULT_DISTANCE, start1])
 }

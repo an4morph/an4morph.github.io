@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from "react"
 
 import { nanoid } from "nanoid"
 
+import { useSmoothAppearance } from "../../hooks/useSmoothAppearance"
 import { gsap } from "../../utils/gsap"
 import { Btns, Container, Gradient, Hint, LinkButton } from "./styled"
-import { useAnimation } from "./useAnimation"
 
 const links = [
   {
@@ -45,8 +45,16 @@ export const CVBlock: React.FC = () => {
   const trigger = useRef() as React.MutableRefObject<HTMLDivElement> 
   const [hoverId, setHoverId] = useState<string | number | null>(null)
   const [start, setStart] = useState(false)
+  const [start1, setStart1] = useState(true)
 
-  useAnimation(trigger)
+  useEffect(() => {
+    setStart1(false)
+  }, [])
+
+  useSmoothAppearance(trigger, [
+    { selector: '.hint', direction: 'top', start: 'top bottom' },
+    { selector: '.buttons', direction: 'left', start: 'top 70%', trigger: trigger.current },
+  ], start1)
 
   const setHoverIdDelay = (id: string | number | null) => {
     setStart(true)
@@ -77,13 +85,13 @@ export const CVBlock: React.FC = () => {
 
   return (
     <Container ref={trigger}>
-      <Hint>
+      <Hint className="hint">
         <Gradient/>
         <p className="hint-text">
           {links.find(l => l.id === hoverId)?.hint || defaultHint}
         </p>
       </Hint>
-      <Btns>
+      <Btns className="buttons">
         {
           links.map(({ id, name, link }) => (
             <div

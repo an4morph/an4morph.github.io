@@ -32,7 +32,7 @@ export const AboutBlock: React.FC = () => {
     { selector: '.title', direction: 'right', trigger: trigger.current, start: 'top bottom' },
     { selector: '.first-text', direction: 'left', trigger: trigger.current, start: 'top bottom' },
     { selector: '.second-text', direction: 'left', trigger: trigger.current, start: 'top bottom' },
-    { selector: '.third-text', direction: 'left', start: 'top 90%' },
+    { selector: '.third-text', direction: 'left' },
   ], 0.1))
 
   return (

@@ -3,8 +3,8 @@ import { useRef } from "react"
 import { nanoid } from "nanoid"
 
 import Photo2 from "../../assets/img/polina-2.png"
+import { useSmoothAppearance } from "../../hooks/useSmoothAppearance"
 import { Btns, Container, FirstLine, FirstText, Gradient, LinkButton, StyledTgLink, Wrapper } from "./styled"
-import { useAnimation } from "./useAnimation"
 
 const links = [
   {
@@ -31,7 +31,14 @@ const title = 'Let’s communicate!'
 export const ContactsBlock: React.FC = () => {
   const trigger = useRef() as React.MutableRefObject<HTMLDivElement> 
 
-  useAnimation(trigger)
+  useSmoothAppearance(trigger, [
+    { selector: '.title', direction: 'right' },
+    { selector: '.desc', direction: 'left' },
+    { selector: '.btns-1', direction: 'left' },
+    { selector: '.btns-2', direction: 'left' },
+    { selector: '.btns-3', direction: 'left' },
+    { selector: 'img', direction: 'left' },
+  ])
 
   return (
     <Container ref={trigger}>
@@ -39,9 +46,9 @@ export const ContactsBlock: React.FC = () => {
       <FirstLine>
         <FirstText>
           <Gradient />
-          <h3>{title}</h3>
-          <img alt="polina with laptop" className="min-screen" src={Photo2} />
-          <p>
+          <h3 className="title">{title}</h3>
+          <img alt="polina with laptop" className="min-screen img2" src={Photo2} />
+          <p className="desc">
             The fastest way I will answer you is in the telegram chat &#40;<TgLink />&#41;. 
             But you can always write me an email or message in Linkedin
           </p>
@@ -50,8 +57,9 @@ export const ContactsBlock: React.FC = () => {
       </FirstLine>
       <Btns>
         {
-          links.map(({ id, name, link }) => (
+          links.map(({ id, name, link }, index) => (
             <LinkButton 
+              className={`btns-${index + 1}`}
               external
               key={id}
               link={link}

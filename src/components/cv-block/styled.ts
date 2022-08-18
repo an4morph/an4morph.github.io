@@ -12,6 +12,10 @@ export const Container = styled.div`
   width: 100%;
   padding-bottom: 10vw;
   padding-top: 10vw;
+
+  & .hint, & .buttons {
+    opacity: 0;
+  }
 `
 
 export const Hint = styled.div`

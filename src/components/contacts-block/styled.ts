@@ -119,6 +119,10 @@ export const Container = styled.div`
       display: block;
     }
   }
+
+  & .title, & .desc, & .btns-1, & .btns-2, & .btns-3, & .img2 {
+    opacity: 0;
+  }
 `
 
 export const Gradient = styled(RadialGradient)`
