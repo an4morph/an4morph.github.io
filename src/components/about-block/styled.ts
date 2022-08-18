@@ -41,6 +41,11 @@ export const Container = styled.div`
       `)
     }
   }
+
+  /* for scroll trigger */
+  & .image, & .title, & .first-text, & .second-text, & .third-text {
+    opacity: 0;
+  }
 `
 
 export const FirstLine = styled.div`

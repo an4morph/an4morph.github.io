@@ -2,9 +2,9 @@ import { useRef } from "react"
 
 import { nanoid } from "nanoid"
 
+import { useSmoothAppearance } from "../../hooks/useSmoothAppearance"
 import { Skill } from "../../types"
 import { Container, StyledSkillsBox } from "./styled"
-import { useAnimation } from "./useAnimation"
 
 const designSkills: Skill[] = [
   {
@@ -39,17 +39,22 @@ const designSkills: Skill[] = [
 export const SkillsBlock: React.FC= () => {
   const trigger = useRef() as React.MutableRefObject<HTMLDivElement> 
 
-  useAnimation(trigger)
+  useSmoothAppearance(trigger, [
+    { selector: '.design', direction: 'right', start: 'top 80%' },
+    { selector: '.frontend', direction: 'left' },
+  ])
 
   return (
     <Container
       ref={trigger}
     >
       <StyledSkillsBox 
+        className="design"
         skills={designSkills}
         title="Design"
       />
       <StyledSkillsBox
+        className="frontend"
         skills={designSkills}
         title="Frontend"
       />

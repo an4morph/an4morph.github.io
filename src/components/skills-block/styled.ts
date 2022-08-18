@@ -14,6 +14,10 @@ export const Container = styled.div`
   @media ${media.desktop} {
     flex-direction: row;
   }
+
+  & .design, & .frontend {
+    opacity: 0;
+  }
 `
 
 export const StyledSkillsBox = styled(SkillsBox)`
