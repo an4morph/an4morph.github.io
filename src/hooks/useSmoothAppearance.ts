@@ -7,16 +7,8 @@ export type SmoothItem = {
   selector: string
   direction?: 'top' | 'left' | 'right' | 'bottom'
   distance?: string
-  delay?: number
   trigger?: string | HTMLDivElement
   start?: string
-}
-
-const withStagger = (items: SmoothItem[], timing: number) => {
-  return items.map((item, index) => ({
-    ...item,
-    delay: timing * index
-  }))
 }
 
 export const useSmoothAppearance = (mainRef: React.MutableRefObject<HTMLDivElement>, items: SmoothItem[], start1?: boolean) => {
@@ -27,9 +19,8 @@ export const useSmoothAppearance = (mainRef: React.MutableRefObject<HTMLDivEleme
   useEffect(() => {
     if (!start1 && start1 !== undefined) return
     const q = gsap.utils.selector(mainRef)
-    const actualItems = isWideScreen ? withStagger(items, 0) : items
 
-    actualItems.forEach(({ selector, direction, distance, delay, trigger, start }) => {
+    items.forEach(({ selector, direction, distance, trigger, start }) => {
       const getPosition = () => {
         let key = 'x'
         let value = `-${distance || DEFAULT_DISTANCE}`
@@ -51,7 +42,6 @@ export const useSmoothAppearance = (mainRef: React.MutableRefObject<HTMLDivEleme
         [position.key]: position.value
       }, {
         [position.key]: 0,
-        delay,
         opacity: 1,
         duration: 1,
         ease: 'power2.out',
