@@ -11,31 +11,31 @@ const links = [
     id: nanoid(),
     name: 'Behance',
     link: 'https://www.behance.net/anamorph',
-    hint: 'Behance hint'
+    hint: 'My main portfolio for the most interesting projects'
   },
   {
     id: nanoid(),
     name: 'Github',
     link: 'https://github.com/an4morph',
-    hint: 'Github hint'
+    hint: 'Examples of my code as a front-end developer'
   },
-  {
-    id: nanoid(),
-    name: 'Figma',
-    link: 'https://google.com',
-    hint: 'Figma hint'
-  },
-  {
-    id: nanoid(),
-    name: 'Dribbble',
-    link: 'https://dribbble.com/an4morph',
-    hint: 'Dribbble hint'
-  },
+  // {
+  //   id: nanoid(),
+  //   name: 'Figma',
+  //   link: 'https://www.figma.com/file/GWxZlRVAKAHNcZ2V9rknjE/Polina-Akhmetova-%7C-Design-examples?node-id=0%3A1',
+  //   hint: 'The Figma page was created to show an example of a workflow: creating prototypes, animations, and how the project is received by the developer'
+  // },
+  // {
+  //   id: nanoid(),
+  //   name: 'Dribbble',
+  //   link: 'https://dribbble.com/an4morph',
+  //   hint: 'Profile on dribbble. Pieces of projects that are not on Behance'
+  // },
   {
     id: nanoid(),
     name: 'CV.pdf',
-    link: 'https://google.com',
-    hint: 'CV hint'
+    link: 'https://an4morph.github.io/CV.pdf',
+    hint: 'Classic resume in PDF format'
   },
 ]
 
@@ -100,6 +100,7 @@ export const CVBlock: React.FC = () => {
               onMouseLeave={() => setHoverIdDelay(null)}
             >
               <LinkButton
+                external
                 key={id}
                 link={link}
               >
