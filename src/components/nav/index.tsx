@@ -7,7 +7,7 @@ import { Container, Content, Name } from "./styled"
 export const Nav: React.FC = ({ children }) => {
   const [isOpenMenu, setOpenMenu] = useState(false)
 
-  const handleBurgerClick = () => {
+  const toggleMenu = () => {
     setOpenMenu(p => !p)
   }
 
@@ -19,11 +19,11 @@ export const Nav: React.FC = ({ children }) => {
       </Content>
       <Burger 
         isOpen={isOpenMenu} 
-        onClick={handleBurgerClick}
+        onClick={toggleMenu}
       />
       <Menu
         isOpen={isOpenMenu} 
-        onClose={handleBurgerClick}
+        onClose={toggleMenu}
       />
     </Container>
   )
