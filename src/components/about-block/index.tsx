@@ -36,7 +36,7 @@ export const AboutBlock: React.FC = () => {
   ], 0.1))
 
   return (
-    <Container ref={trigger}>
+    <Container className="about-block" ref={trigger}>
       <FirstLine>
         <div>
           <img alt="polina" className="image" src={Photo1}/>

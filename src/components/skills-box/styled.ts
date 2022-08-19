@@ -91,6 +91,7 @@ export const ScrollGradient = styled.div<{ $top?: boolean }>`
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 2;
   background: ${({ $top }) => {
     if (!$top) return `linear-gradient(180deg, ${Colors.webWhite}00 0%, ${Colors.webWhite} 90%);`
     return `linear-gradient(180deg, ${Colors.webWhite} 0%, ${Colors.webWhite}00 90%);`

@@ -87,6 +87,7 @@ export const SkillsBlock: React.FC= () => {
 
   return (
     <Container
+      className="skills-block"
       ref={trigger}
     >
       <StyledSkillsBox 

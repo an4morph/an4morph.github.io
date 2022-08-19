@@ -41,7 +41,7 @@ export const ContactsBlock: React.FC = () => {
   ])
 
   return (
-    <Container ref={trigger}>
+    <Container className="contacts-block" ref={trigger}>
       <Wrapper />
       <FirstLine>
         <FirstText>
