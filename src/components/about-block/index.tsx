@@ -55,9 +55,9 @@ export const AboutBlock: React.FC = () => {
         <TitleBlock />
         <SecondText className="second-text">
           <Gradient />
-          I started designing in 2019. At the university, I studied the Design of Architectural Environment, 
-          and then transferred to software engineering. Now I have found a profession 
-          that combines my two passions - this is design in IT.
+          At university, I studied the Design of Architectural Environment, 
+          and then move to Software Engineering. Then I found a profession that combines my two 
+          passions - design in IT. And I started my design career in 2020.
         </SecondText>
       </SecondLine>
 

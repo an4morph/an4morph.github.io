@@ -21,10 +21,15 @@ export const Container = styled.div<{ $isOpen: boolean }>`
   color: ${Colors.webWhite};
   padding: 40px 28px;
   transform: translateX(100%);
+  z-index: 2;
 
   @media ${media.desktop} {
     width: 50%;
     padding: 3.4vw;
+  }
+
+  & .line {
+    background-color: ${Colors.webWhite};
   }
 `
 

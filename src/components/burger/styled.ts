@@ -15,7 +15,7 @@ export const BurgerButton = styled.button`
   height: 24px;
   cursor: pointer;
 
-  & > div {
+  & > .line {
     width: 28px;
     background-color: ${Colors.webBlack};
 

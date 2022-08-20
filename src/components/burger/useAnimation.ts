@@ -45,14 +45,22 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLButtonElement>,
     }
   }, [q])
 
-  const line = useMemo(() => ({
-    in: () => gsapTo('.line', {
-      background: Colors.webWhite,
-    }),
-    out: () => gsapTo('.line', {
-      background: Colors.webBlack,
+  useEffect(() => {
+    const start = () => {
+      if (msize === 'desktop') return window.innerWidth * 0.056
+      if (msize === 'tabletM' || msize === 'tabletS') return 74
+      return 64
+    }
+    gsap.to(q('.line'), {
+      backgroundColor: Colors.webWhite,
+      scrollTrigger: {
+        trigger: document.querySelector('#contacts-block'),
+        start: `top ${start()}`,
+        end: 'top top',
+        scrub: true,
+      }
     })
-  }), [gsapTo])
+  }, [q, msize])
 
   const line1 = useMemo(() => ({
     in: () => gsapTo('.line-1', {
@@ -89,16 +97,14 @@ export const useAnimation = (trigger: React.MutableRefObject<HTMLButtonElement>,
     init()
 
     if (toggle) {
-      line.in()
       line1.in()
       line2.in()
       line3.in()
     }
     if (!toggle && dirty) {
-      line.out()
       line1.out()
       line2.out()
       line3.out()
     }
-  }, [init, dirty, toggle, line, line1, line2, line3])
+  }, [init, dirty, toggle, line1, line2, line3])
 }
