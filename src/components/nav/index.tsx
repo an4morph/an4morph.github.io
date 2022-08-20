@@ -22,7 +22,7 @@ export const Nav: React.FC = ({ children }) => {
     const blocks = ['about', 'skills', 'cv', 'contacts']
     blocks.forEach((name) => {
       const commonScroll = {
-        trigger: q(`.${name}-block`),
+        trigger: q(`#${name}-block`),
         scrub: true
       }
       gsap.fromTo(q(`.nav-${name}`), { x: distance }, {

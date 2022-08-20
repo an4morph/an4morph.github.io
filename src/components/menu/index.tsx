@@ -11,10 +11,10 @@ type Props = {
 }
 
 const links = [
-  { id: 1, text: 'About', href: '/' },
-  { id: 2, text: 'Skills', href: '/skills' },
-  { id: 3, text: 'CV & Portfolio', href: '/cv' },
-  { id: 4, text: 'Contacts', href: '/contacts' },
+  { id: 1, text: 'About', href: '#about-block' },
+  { id: 2, text: 'Skills', href: '#skills-block' },
+  { id: 3, text: 'CV & Portfolio', href: '#cv-block' },
+  { id: 4, text: 'Contacts', href: '#contacts-block' },
 ]
 
 export const Menu: React.FC<Props> = ({ isOpen, onClose }) => {
@@ -28,7 +28,12 @@ export const Menu: React.FC<Props> = ({ isOpen, onClose }) => {
       <Items>
         {
           links.map(({ href, id, text }) => (
-            <div className="link-item" key={id}>
+            <div 
+              className="link-item" 
+              key={id} 
+              onClick={onClose}
+              role="none"
+            >
               <AppLink href={href}>{text}</AppLink>
             </div>
           ))

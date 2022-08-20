@@ -84,7 +84,7 @@ export const CVBlock: React.FC = () => {
   }, [start])
 
   return (
-    <Container className="cv-block" ref={trigger}>
+    <Container id="cv-block" ref={trigger}>
       <Hint className="hint">
         <Gradient/>
         <p className="hint-text">

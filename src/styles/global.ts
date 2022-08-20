@@ -25,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100vw;
     height: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
   strong {
