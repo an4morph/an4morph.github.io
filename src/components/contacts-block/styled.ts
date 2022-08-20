@@ -4,7 +4,6 @@ import { Colors } from "../../styles/types"
 import { MediaSizes } from "../../types"
 import { media, MediaCreator } from "../../utils/devices"
 import { AppLink } from "../app-link"
-import { Button } from "../button"
 import { ButtonWhite } from "../button/white"
 import { RadialGradient } from "../radial-gradient"
 

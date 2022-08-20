@@ -1,6 +1,5 @@
 import styled from "styled-components"
 
-import { Colors } from "../../styles/types"
 import { media } from "../../utils/devices"
 import { SkillsBox } from "../skills-box"
 
