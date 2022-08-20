@@ -7,8 +7,8 @@ import { SkillsBox } from "../skills-box"
 export const Container = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 8vw;
-  margin-bottom: 8vw;
+  padding-top: 8vw;
+  padding-bottom: 8vw;
   flex-direction: column;
 
   @media ${media.desktop} {

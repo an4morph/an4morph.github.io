@@ -7,6 +7,11 @@ import { RadialGradient } from "../radial-gradient"
 
 export const Container = styled.div`
   position: relative;
+  padding-top: 40px;
+
+  @media ${media.desktop} {
+    padding-top: 3vw;
+  }
 
   & img {
     width: 80%;

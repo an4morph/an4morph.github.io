@@ -8,9 +8,14 @@ export const Container = styled.div`
   width: 100%;
   overflow-x: hidden;
   width: 100vw;
+
+  & .nav-contacts {
+    color: ${Colors.webWhite};
+  }
 `
 
 export const Name = styled.div`
+  opacity: 0;
   display: none;
   position: fixed;
   top: 40px;
@@ -47,7 +52,6 @@ export const Name = styled.div`
 
 export const Content = styled.div`
   width: 100%;
-  margin-top: 40px;
   margin-left: 26px;
   margin-right: 26px;
 
@@ -62,7 +66,6 @@ export const Content = styled.div`
   }
 
   @media ${media.desktop} {
-    margin-top: 3vw;
     margin-left: 9.3vw;
     margin-right: 9vw;
   }
