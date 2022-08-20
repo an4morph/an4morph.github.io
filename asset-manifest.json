@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/static/js/main.3cd9801d.js",
+    "static/media/polina-1.png": "/static/media/polina-1.67c5283db686a120265a.png",
+    "static/media/polina-2.png": "/static/media/polina-2.11641691148ecb7c796a.png",
+    "index.html": "/index.html",
+    "static/media/heart.svg": "/static/media/heart.33fbc88f1fbd4522fe0ec0e929b7a86a.svg",
+    "static/media/arrow-white.svg": "/static/media/arrow-white.fe615f1b77a662c6d19f83e9379888c3.svg",
+    "static/media/arrow.svg": "/static/media/arrow.b1a2bb112a556667b5cec05a3eee9343.svg",
+    "main.3cd9801d.js.map": "/static/js/main.3cd9801d.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3cd9801d.js"
+  ]
+}
