@@ -34,7 +34,7 @@ const links = [
   {
     id: nanoid(),
     name: 'CV.pdf',
-    link: 'https://an4morph.github.io/CV.pdf',
+    link: 'https://an4morph.github.io/Akhmetova_Polina_CV.pdf',
     hint: 'Classic resume in PDF format'
   },
 ]
