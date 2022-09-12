@@ -6,74 +6,83 @@ import { useSmoothAppearance } from "../../hooks/useSmoothAppearance"
 import { Skill } from "../../types"
 import { Container, StyledSkillsBox } from "./styled"
 
-const designSkills: Skill[] = [
+const skills1: Skill[] = [
   {
     id: nanoid(),
-    name: 'UI / UX',
-    desc: 'Development of beautiful and user-friendly interfaces based on customer requirements',
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, dando eiusmod tempor incididunt'
+  },
+  {
+    id: nanoid(),
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
     isFav: true,
   },
   {
     id: nanoid(),
-    name: 'UX audit and optimization',
-    desc: 'Improvement of the existing site, analysis of UX errors and ways to eliminate them',
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
   },
   {
     id: nanoid(),
-    name: 'Prototyping and Wireframes',
-    desc: 'Creating a base for the future application for its subsequent styling',
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, dando eiusmod tempor incididunt',
     isFav: true,
   },
   {
     id: nanoid(),
-    name: 'Adaptation for all screens',
-    desc: 'Creating a convenient responsive website for any screen size',
-    isFav: true,
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
   },
   {
     id: nanoid(),
-    name: 'Design system development',
-    desc: "Design solutions for a large platform and/or for a group of applications of one company"
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
+  },
+  {
+    id: nanoid(),
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
   },
 ]
 
-const frontendSkills: Skill[] = [
+const skills2: Skill[] = [
   {
     id: nanoid(),
-    name: 'HTML, CSS, JS',
-    desc: 'Basic technologies of any front-end developer. Responsive, pixel perfect, fast and clear'
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
   },
   {
     id: nanoid(),
-    name: 'React + Redux + Thunk + TypeScript',
-    desc: 'Favorite technology stack for large commercial projects',
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt',
     isFav: true,
   },
   {
     id: nanoid(),
-    name: 'Animation',
-    desc: 'CSS transitions, JS animation frame, GSAP, PaperJS or HTML Canvas'
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
   },
   {
     id: nanoid(),
-    name: 'Architecture (middle)',
-    desc: 'Can build a project from scratch for specific needs. Build under dev and prod',
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, dando eiusmod tempor incididunt',
     isFav: true,
   },
   {
     id: nanoid(),
-    name: 'Basic backend knowledge',
-    desc: "Can create simple NodeJS + ExpressJS API. It can be useful when you need to start developing a front-end without a back-end"
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
   },
   {
     id: nanoid(),
-    name: 'Metorship and public speaking',
-    desc: "3 years of teaching and curriculum development experience for students of different levels."
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
   },
   {
     id: nanoid(),
-    name: 'Task delegation',
-    desc: "Work in a team and deleagte tasks to intern/junior developers, based on their level of knowledge and personal preferences"
+    name: 'Loremipsum',
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt'
   },
 ]
 
@@ -81,8 +90,8 @@ export const SkillsBlock: React.FC= () => {
   const trigger = useRef() as React.MutableRefObject<HTMLDivElement> 
 
   useSmoothAppearance(trigger, [
-    { selector: '.design', direction: 'right', start: 'top 80%' },
-    { selector: '.frontend', direction: 'left' },
+    { selector: '.skills1', direction: 'right', start: 'top 80%' },
+    { selector: '.skills2', direction: 'left' },
   ])
 
   return (
@@ -91,14 +100,14 @@ export const SkillsBlock: React.FC= () => {
       ref={trigger}
     >
       <StyledSkillsBox 
-        className="design"
-        skills={designSkills}
-        title="Design"
+        className="skills1"
+        skills={skills1}
+        title="Hard"
       />
       <StyledSkillsBox
-        className="frontend"
-        skills={frontendSkills}
-        title="Frontend"
+        className="skills2"
+        skills={skills2}
+        title="Soft"
       />
     </Container>
   )
