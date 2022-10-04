@@ -18,14 +18,15 @@ const Dev = styled.div`
 const App: React.FC = () => {
   return (
     <Container>
-      {/* <Nav>
+      <Nav>
         <AboutBlock />
         <SkillsBlock />
+        {/*
         <CVBlock />
-        <ContactsBlock />
-      </Nav> */}
+        <ContactsBlock /> */}
+      </Nav>
 
-      <Dev>Sorry, website under reconstruction</Dev>
+      {/* <Dev>Sorry, website under reconstruction</Dev> */}
     </Container>
   )
 }

@@ -1,6 +1,7 @@
 import { useRef } from "react"
 
 import Photo1 from "../../assets/img/polina-1.png"
+import { about } from "../../data"
 import { SmoothItem, useSmoothAppearance } from "../../hooks/useSmoothAppearance"
 import { 
   Container, FirstLine, FirstText, Gradient, Job, MiddleTitle, 
@@ -12,7 +13,7 @@ const TitleBlock = ({ top }: { top?: boolean }) => {
   return (
     <TitleWrap className="title">
       <Name>Polina Akhmetova</Name>
-      <Job>UI/UX Designer | Frontend developer</Job>
+      <Job>Frontend developer (React)</Job>
     </TitleWrap>
   )
 }
@@ -23,6 +24,8 @@ const withStagger = (items: SmoothItem[], timing: number) => {
     delay: timing * index
   }))
 }
+
+const TEXT = about
 
 export const AboutBlock: React.FC = () => {
   const trigger = useRef() as React.MutableRefObject<HTMLDivElement>
@@ -44,10 +47,7 @@ export const AboutBlock: React.FC = () => {
         </div>
         
         <FirstText className="first-text">
-          Hi there! I’m Polina, and I’m designer.{`\n`} I specialize in UI/UX design. From market research and 
-          wireframes to mockup and testing. My advantage is that I have a great background as a front-end 
-          developer. I have been developing websites using ReactJS since 2017. And this helps me to see my 
-          design as a developer, to understand how long and difficult it will be to develop it
+          {TEXT[0]}
         </FirstText>
       </FirstLine>
 
@@ -55,14 +55,12 @@ export const AboutBlock: React.FC = () => {
         <TitleBlock />
         <SecondText className="second-text">
           <Gradient />
-          At university, I studied the Design of Architectural Environment, 
-          and then move to Software Engineering. Then I found a profession that combines my two 
-          passions - design in IT. And I started my design career in 2020.
+          {TEXT[1]}
         </SecondText>
       </SecondLine>
 
       <ThirdText className="third-text">
-        Below on this site, you can learn more about my skills, see my portfolio and find contacts for communication
+        {TEXT[2]}
       </ThirdText>
 
     </Container>
