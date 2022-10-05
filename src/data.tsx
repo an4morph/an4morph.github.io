@@ -20,40 +20,7 @@ export const about = [
 
 export const skills: { title: string, items: Skill[] }[] = [
   {
-    title: "Skill1",
-    items: [
-      {
-        id: nanoid(),
-        name: 'UI / UX',
-        desc: 'Development of beautiful and user-friendly interfaces based on customer requirements',
-        isFav: true,
-      },
-      {
-        id: nanoid(),
-        name: 'UX audit and optimization',
-        desc: 'Improvement of the existing site, analysis of UX errors and ways to eliminate them',
-      },
-      {
-        id: nanoid(),
-        name: 'Prototyping and Wireframes',
-        desc: 'Creating a base for the future application for its subsequent styling',
-        isFav: true,
-      },
-      {
-        id: nanoid(),
-        name: 'Adaptation for all screens',
-        desc: 'Creating a convenient responsive website for any screen size',
-        isFav: true,
-      },
-      {
-        id: nanoid(),
-        name: 'Design system development',
-        desc: "Design solutions for a large platform and/or for a group of applications of one company"
-      },
-    ]
-  },
-  {
-    title: 'Skill2',
+    title: 'Frontend',
     items: [
       {
         id: nanoid(),
@@ -73,7 +40,7 @@ export const skills: { title: string, items: Skill[] }[] = [
       },
       {
         id: nanoid(),
-        name: 'Architecture (middle)',
+        name: 'Project from scratch',
         desc: 'Can build a project from scratch for specific needs. Build under dev and prod',
         isFav: true,
       },
@@ -89,4 +56,19 @@ export const skills: { title: string, items: Skill[] }[] = [
       },
     ]
   }
+]
+
+export const portfolioLinks = [
+  {
+    id: nanoid(),
+    name: 'Github',
+    link: 'https://github.com/an4morph',
+    hint: 'Examples of my code as a front-end developer'
+  },
+  {
+    id: nanoid(),
+    name: 'CV.pdf',
+    link: 'https://an4morph.github.io/Akhmetova_Polina_CV.pdf',
+    hint: 'Classic resume in PDF format'
+  },
 ]

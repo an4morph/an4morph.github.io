@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
 `
 
-export const StyledSkillsBox = styled(SkillsBox)`
+export const StyledSkillsBox = styled(SkillsBox)<{ $wide: boolean }>`
   width: 100%;
 
   &:nth-child(2) {
@@ -32,6 +32,6 @@ export const StyledSkillsBox = styled(SkillsBox)`
   }
 
   @media ${media.desktop} {
-    width: 32vw;
+    width: ${({ $wide }) => $wide ? '60vw' : '32vw'};
   }
 `
